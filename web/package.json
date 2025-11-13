@@ -1,0 +1,10 @@
+{
+  "name": "edge-web",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc src/index.ts --outFile dist/bundle.js --target ES5 --module none"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  }
+}

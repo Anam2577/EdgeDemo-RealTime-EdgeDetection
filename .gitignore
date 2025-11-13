@@ -1,0 +1,9 @@
+# .gitignore
+node_modules/
+*.class
+*.pyc
+.vscode/
+.DS_Store
+/dist
+/build
+/*.zip
