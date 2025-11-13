@@ -20,3 +20,27 @@ To build:
 Notes:
 - The GLRenderer file is a scaffold; for a full working renderer implement EGL context creation,
   shader compilation and proper render loop using a SurfaceTexture-backed EGL surface.
+
+System Architecture
++---------------------+
+|   Android Camera2   |
++---------+-----------+
+          |
+          v   NV21 Frames
++---------------------------+
+|       JNI Bridge          |
++-------------+-------------+
+              |
+              v   Mat (BGR/GRAY/Edges)
++---------------------------+
+|     C++ OpenCV Engine     |
+|   - Canny Edge Detect     |
++-------------+-------------+
+              |
+              v   RGBA Bytes
++---------------------------+
+|     OpenGL ES Renderer    |
+|   - Upload texture        |
+|   - Fullscreen quad       |
++---------------------------+
+
